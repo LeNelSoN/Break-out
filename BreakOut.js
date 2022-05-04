@@ -1,5 +1,8 @@
 const world = document.querySelector("#myGameArea") // Constante qui contient le canvas avec l'ID myGameArea
 const ctx = world.getContext("2d"); // Récupération du contexte du canvas, ici en 2D dans la constant ctx
+const buttonLeft = document.getElementById('Left')
+const buttonRight = document.getElementById('Right')
+const buttonLaunch = document.getElementById('Launch')
 
 world.width = 320;  // Définie la taille du canvas 
 world.height = 320; // Définie la taille du canvas 
@@ -264,3 +267,19 @@ addEventListener("keyup", ({key})=>{
         break
     }
 })
+
+buttonLeft.addEventListener("mousedown", ()=>{
+    keys.ArrowLeft.pressed = true;
+} )
+buttonLeft.addEventListener("mouseup", ()=>{
+    keys.ArrowLeft.pressed = false;
+} )
+buttonRight.addEventListener("mousedown", ()=>{
+    keys.ArrowRight.pressed = true;
+} )
+buttonRight.addEventListener("mouseup", ()=>{
+    keys.ArrowRight.pressed = false;
+} )
+buttonLaunch.addEventListener('click', ()=>{
+    player.lunch();
+} )

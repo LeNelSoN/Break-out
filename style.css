@@ -1,0 +1,25 @@
+.break-out {
+    background: #020202;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .break-out div button {
+    color: #020202;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+  }
+  .break-out button {
+    color: #020202;
+    width: 150px;
+    height: 75px;
+  }
+  
+  canvas {
+    border: double #302f2f 4px;
+    background-color: #e7e7e7;
+  }
+  
+  
