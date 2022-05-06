@@ -233,8 +233,13 @@ const animationLoop = () => { //Boucle D'animation
     }
     grids.forEach(grid => {
         grid.update();
-        grid.blocks.forEach(block => {
+        grid.blocks.forEach((block, indexBlock) => {
             block.update();
+            if (balls != null && balls.position.y <= block.position.y + block.height && balls.position.y >= block.position.y && 
+                balls.position.x <= block.position.x + block.width && balls.position.x >= block.position.x) {
+                grid.blocks.splice(indexBlock,1)
+            }
+
         });
     });
     frame ++ //Incrémente frame
