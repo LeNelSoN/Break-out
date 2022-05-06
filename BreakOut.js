@@ -268,18 +268,18 @@ addEventListener("keyup", ({key})=>{
     }
 })
 
-buttonLeft.addEventListener("mousedown", ()=>{
+buttonLeft.addEventListener("touchstart", ()=>{
     keys.ArrowLeft.pressed = true;
 } )
-buttonLeft.addEventListener("mouseup", ()=>{
+buttonLeft.addEventListener("touchend", ()=>{
     keys.ArrowLeft.pressed = false;
 } )
-buttonRight.addEventListener("mousedown", ()=>{
+buttonRight.addEventListener("touchstart", ()=>{
     keys.ArrowRight.pressed = true;
 } )
-buttonRight.addEventListener("mouseup", ()=>{
+buttonRight.addEventListener("touchend", ()=>{
     keys.ArrowRight.pressed = false;
 } )
-buttonLaunch.addEventListener('click', ()=>{
+buttonLaunch.addEventListener("touchstart", ()=>{
     player.lunch();
 } )
