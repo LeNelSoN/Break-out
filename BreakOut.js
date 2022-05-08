@@ -137,7 +137,7 @@ class Block{
 
 class Grid{
     constructor(){
-        this.position={x:3,y:3}
+        this.position={x:2.6,y:3.6}
         this.velocity={x:1,y:0}
         this.blocks = []
         let rows = Math.floor((world.height/8)*(1/3));
@@ -148,8 +148,8 @@ class Grid{
 			for(let y = this.position.y;y<rows;y++){
                 this.blocks.push(new Block({
                     position:{
-                        x:x * 16,
-                        y:y * 8
+                        x:x * 16.4,
+                        y:y * 8.4
                     }
                 }))
             }
@@ -235,10 +235,19 @@ const animationLoop = () => { //Boucle D'animation
         grid.update();
         grid.blocks.forEach((block, indexBlock) => {
             block.update();
+        setTimeout(()=>{
             if (balls != null && balls.position.y <= block.position.y + block.height && balls.position.y >= block.position.y && 
                 balls.position.x <= block.position.x + block.width && balls.position.x >= block.position.x) {
                 grid.blocks.splice(indexBlock,1)
+                if (balls.position.y > block.position.y && balls.position.y < block.position.y + block.width) {
+                    balls.velocity.y = -speed.y;
+                }
+                if (balls.position.x > block.position.x && balls.position.x < block.position.x + block.height ) {
+                    balls.velocity.x = -speed.x;
+                }
             }
+        },1
+        )    
 
         });
     });
